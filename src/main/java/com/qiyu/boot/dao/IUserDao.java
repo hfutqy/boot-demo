@@ -6,9 +6,9 @@ import java.util.List;
 
 /**
  * @author qiyu
+ * @version 1.0.0
  * @date 2017-02-25 09:07
  * @since 1.8
- * @version 1.0.0
  */
 public interface IUserDao {
 
