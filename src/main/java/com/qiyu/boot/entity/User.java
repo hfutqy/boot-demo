@@ -11,10 +11,11 @@ import java.util.Date;
 
 /**
  * 用户
+ *
  * @author qiyu
+ * @version 1.0.0
  * @date 2017-02-25 09:00
  * @since 1.8
- * @version 1.0.0
  */
 @Data
 @ToString
@@ -28,8 +29,8 @@ public class User {
     /**
      * 用户名
      */
-    @NotBlank(message ="用户名不能为空")
-    @Length(min = 5,max =32,message = "用户名长度在5-32")
+    @NotBlank(message = "用户名不能为空")
+    @Length(min = 5, max = 32, message = "用户名长度在5-32")
     private String uname;
 
     /**

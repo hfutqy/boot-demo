@@ -15,10 +15,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * swagger 整合管理API接口
  * 参考<url href="http://www.jianshu.com/p/8033ef83a8ed">http://www.jianshu.com/p/8033ef83a8ed</url>
  * </p>
+ *
  * @author qiyu
+ * @version 1.0.0
  * @date 2017-02-26 20:12
  * @since 1.8
- * @version 1.0.0
  */
 @Configuration
 @EnableSwagger2

@@ -23,13 +23,14 @@ import java.util.Map;
 
 /**
  * 数据源
+ *
  * @author qiyu
+ * @version 1.0.0
  * @date 2017-02-25 08:14
  * @since 1.8
- * @version 1.0.0
  */
 @Configuration
-public class DataSourceConfig implements EnvironmentAware{
+public class DataSourceConfig implements EnvironmentAware {
 
     private static final Logger log = LoggerFactory.getLogger(DataSourceConfig.class);
 
@@ -40,20 +41,21 @@ public class DataSourceConfig implements EnvironmentAware{
     @Override
     public void setEnvironment(Environment environment) {
         this.environment = environment;
-        this.prop = new RelaxedPropertyResolver(environment,"spring.datasource.");
+        this.prop = new RelaxedPropertyResolver(environment, "spring.datasource.");
     }
 
     /**
      * 数据库连接池配置
+     *
      * @return
      */
-    @Bean(initMethod="init",destroyMethod="close",name="dataSource")
-    public DataSource dataSource(){
+    @Bean(initMethod = "init", destroyMethod = "close", name = "dataSource")
+    public DataSource dataSource() {
         log.info("数据库连接池配置中......");
         if (StringUtils.isEmpty(prop.getProperty("url"))) {
             throw new ApplicationContextException("数据库连接池url配置错误.");
-        }else{
-            DruidDataSource druid=new DruidDataSource();
+        } else {
+            DruidDataSource druid = new DruidDataSource();
             druid.setUrl(prop.getProperty("url"));
             druid.setUsername(prop.getProperty("username"));
             druid.setPassword(prop.getProperty("password"));
@@ -80,6 +82,7 @@ public class DataSourceConfig implements EnvironmentAware{
 
     /**
      * 静态资源过滤
+     *
      * @return
      */
     @Bean
@@ -102,8 +105,8 @@ public class DataSourceConfig implements EnvironmentAware{
         registration.setUrlMappings(Lists.newArrayList("/druid/*"));
         //自定义添加初始化参数
         Map<String, String> intParams = Maps.newHashMap();
-        intParams.put("loginUsername","druid");
-        intParams.put("loginPassword","druid");
+        intParams.put("loginUsername", "druid");
+        intParams.put("loginPassword", "druid");
         registration.setName("DruidWebStatFilter");
         registration.setInitParameters(intParams);
         return registration;

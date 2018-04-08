@@ -2,9 +2,10 @@ package com.qiyu.boot.config;
 
 /**
  * 常量
+ *
  * @author qiyu
- * @since 1.8
  * @version 1.0.0
+ * @since 1.8
  **/
 public class Constants {
 
