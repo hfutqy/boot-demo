@@ -121,10 +121,16 @@ public class Main {
                     }
                 }
             }
-            //现在的tList 理面的w都是最小的;获取fuList
-            //fuList.size()=n
-            List<List<Integer>> fuList = new ArrayList<>();
-//            for()
+            //现在的tList 里面的w都是最小的;再获取fu
+            int[] fu = new int[n];
+            for(int j=0; j<n; j++){
+                for(int h=0; h<n; h++){
+                    if(tList.get(j).getU() == j){
+                        fu[j] += tList.get(j).getW();
+                    }
+                }
+            }
+            //
 
         }
 
