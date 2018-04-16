@@ -33,7 +33,7 @@ public class UserController {
     @PostMapping(value = "add")
     public String insert(@Valid User user) {
         // user.setBirth(new Date());
-        log.info("请求参数:{}", user);
+//        log.info("请求参数:{}", user);
         return userService.insert(user);
     }
 
