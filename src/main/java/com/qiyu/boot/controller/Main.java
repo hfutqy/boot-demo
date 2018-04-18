@@ -60,10 +60,10 @@ public class Main {
         int[] nList = new int[T];
         int[] mList = new int[T];
         List<List<BeanUVW>> beanUVWList = new ArrayList<>();
-        for(int i = 0; i<T; i++) {
+        for (int i = 0; i < T; i++) {
             nList[i] = input.nextInt();
             mList[i] = input.nextInt();
-            for(int j=0; j<mList[i]; j++) {
+            for (int j = 0; j < mList[i]; j++) {
                 List<BeanUVW> tList = new ArrayList<>();
                 BeanUVW uvw = new Main().new BeanUVW();
                 uvw.setU(input.nextInt());
@@ -74,7 +74,7 @@ public class Main {
             }
         }
         System.out.println("输入完毕");
-        for(int i=0; i<T; i++){
+        for (int i = 0; i < T; i++) {
             //处理输入，获取最小危险值d(u,v)，在获取危险程度f(u)=∑d(u,v)
             List<BeanUVW> tList = beanUVWList.get(i);
             int n = nList[i];
@@ -82,7 +82,7 @@ public class Main {
             for (int x = 0; x < mList[i]; x++) {
                 //整理tList
                 BeanUVW uvwX = tList.get(x);
-                for (int y = x+1; x < mList[i]-1; y++) {
+                for (int y = x + 1; x < mList[i] - 1; y++) {
                     BeanUVW uvwY = tList.get(y);
                     if ((uvwX.getU() == uvwY.getU() && uvwX.getV() == uvwY.getV())
                             || (uvwX.getV() == uvwY.getU() && uvwX.getU() == uvwY.getV())) {
@@ -94,9 +94,9 @@ public class Main {
             }
             //现在的tList 里面的w都是最小的;再获取fu
             int[] fu = new int[n];
-            for(int j=0; j<n; j++){
-                for(int h=0; h<n; h++){
-                    if(tList.get(j).getU() == j){
+            for (int j = 0; j < n; j++) {
+                for (int h = 0; h < n; h++) {
+                    if (tList.get(j).getU() == j) {
                         fu[j] += tList.get(j).getW();
                     }
                 }
@@ -106,28 +106,33 @@ public class Main {
         }
 
 
-
-
     }
+
     class BeanUVW {
         private int u;
         private int v;
         private int w;
+
         public int getU() {
             return u;
         }
+
         public void setU(int u) {
             this.u = u;
         }
+
         public int getV() {
             return v;
         }
+
         public void setV(int v) {
             this.v = v;
         }
+
         public int getW() {
             return w;
         }
+
         public void setW(int w) {
             this.w = w;
         }
