@@ -1,6 +1,5 @@
 package com.qiyu.boot.controller;
 
-import io.swagger.models.auth.In;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,25 +11,14 @@ import java.util.Scanner;
 
 /*
 给定一个 nn 个点 mm 条边的连通无向图，其中点从 11 到 nn 标号，而每条边有一个危险值。
-
 对于任意一条路径，定义路径上危险值的最大值为这条路径的危险值。
-
 对于任意不同的两点 uu 和 vv，定义 d(u, v)d(u,v) 为所有从 uu 到 vv 的路径的危险值最小值。
-
 对于每个点 uu，定义 f_u = \sum\limits_{1 \leq v \leq n, u \neq v}{d(u, v)}f
-u
-​	 =
-1≤v≤n,u≠v
-∑
-​	 d(u,v)，表示点 uu 的危险程度。
-
+u =1≤v≤n,u≠v
+∑ d(u,v)，表示点 uu 的危险程度。
 你的任务就是计算每个点的危险程度。
-
 为了便于输出，你只需要给出 \mathop{\oplus}\limits_{i = 1}^{n}{\left(i \cdot f(i)\right)}
-i=1
-⊕
-n
-​	 (i⋅f(i)) 的值即可，其中 \oplus⊕ 代表按位异或。
+i=1⊕n(i⋅f(i)) 的值即可，其中 \oplus⊕ 代表按位异或。
 
 输入格式
 第一行包含一个正整数 TT，表示有 TT 组测试数据。
@@ -130,7 +118,7 @@ public class Main {
                     }
                 }
             }
-            
+
 
         }
 
